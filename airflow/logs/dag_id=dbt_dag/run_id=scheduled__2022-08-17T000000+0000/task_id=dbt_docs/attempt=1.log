@@ -1,0 +1,35 @@
+[2022-08-21 19:49:57,867] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dbt_dag.dbt_docs scheduled__2022-08-17T00:00:00+00:00 [queued]>
+[2022-08-21 19:49:57,886] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dbt_dag.dbt_docs scheduled__2022-08-17T00:00:00+00:00 [queued]>
+[2022-08-21 19:49:57,887] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:49:57,887] {taskinstance.py:1377} INFO - Starting attempt 1 of 1
+[2022-08-21 19:49:57,887] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:49:57,921] {taskinstance.py:1397} INFO - Executing <Task(BashOperator): dbt_docs> on 2022-08-17 00:00:00+00:00
+[2022-08-21 19:49:57,923] {standard_task_runner.py:52} INFO - Started process 122 to run task
+[2022-08-21 19:49:57,926] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'dbt_dag', 'dbt_docs', 'scheduled__2022-08-17T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project.py', '--cfg-path', '/tmp/tmprojylexs', '--error-file', '/tmp/tmpekbg1pxy']
+[2022-08-21 19:49:57,927] {standard_task_runner.py:80} INFO - Job 10: Subtask dbt_docs
+[2022-08-21 19:49:58,010] {task_command.py:371} INFO - Running <TaskInstance: dbt_dag.dbt_docs scheduled__2022-08-17T00:00:00+00:00 [running]> on host 5ce0005a4e16
+[2022-08-21 19:49:58,118] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dbt_dag
+AIRFLOW_CTX_TASK_ID=dbt_docs
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-17T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-17T00:00:00+00:00
+[2022-08-21 19:49:58,119] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-08-21 19:49:58,119] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'cd ${DBT_HOME} && dbt docs generate']
+[2022-08-21 19:49:58,123] {subprocess.py:85} INFO - Output:
+[2022-08-21 19:50:01,438] {subprocess.py:92} INFO - [0m19:50:01  Running with dbt=1.2.0
+[2022-08-21 19:50:03,194] {subprocess.py:92} INFO - [0m19:50:03  Found 6 models, 9 tests, 0 snapshots, 0 analyses, 523 macros, 0 operations, 0 seed files, 3 sources, 1 exposure, 0 metrics
+[2022-08-21 19:50:03,198] {subprocess.py:92} INFO - [0m19:50:03
+[2022-08-21 19:50:03,756] {subprocess.py:92} INFO - [0m19:50:03  Concurrency: 5 threads (target='dbt_x_airflow')
+[2022-08-21 19:50:03,757] {subprocess.py:92} INFO - [0m19:50:03
+[2022-08-21 19:50:04,031] {subprocess.py:92} INFO - [0m19:50:04  Done.
+[2022-08-21 19:50:04,103] {subprocess.py:92} INFO - [0m19:50:04  Building catalog
+[2022-08-21 19:50:08,602] {subprocess.py:92} INFO - [0m19:50:08  Catalog written to /dbt-airflow/dbt_jaffleshop/target/catalog.json
+[2022-08-21 19:50:09,262] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-08-21 19:50:09,317] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=dbt_dag, task_id=dbt_docs, execution_date=20220817T000000, start_date=20220821T194957, end_date=20220821T195009
+[2022-08-21 19:50:09,378] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-21 19:50:09,404] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

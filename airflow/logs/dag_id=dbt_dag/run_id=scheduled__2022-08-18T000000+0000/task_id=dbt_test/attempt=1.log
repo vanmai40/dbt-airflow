@@ -1,0 +1,56 @@
+[2022-08-21 19:49:45,857] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dbt_dag.dbt_test scheduled__2022-08-18T00:00:00+00:00 [queued]>
+[2022-08-21 19:49:45,872] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dbt_dag.dbt_test scheduled__2022-08-18T00:00:00+00:00 [queued]>
+[2022-08-21 19:49:45,872] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:49:45,873] {taskinstance.py:1377} INFO - Starting attempt 1 of 1
+[2022-08-21 19:49:45,873] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:49:45,904] {taskinstance.py:1397} INFO - Executing <Task(BashOperator): dbt_test> on 2022-08-18 00:00:00+00:00
+[2022-08-21 19:49:45,906] {standard_task_runner.py:52} INFO - Started process 108 to run task
+[2022-08-21 19:49:45,908] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'dbt_dag', 'dbt_test', 'scheduled__2022-08-18T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project.py', '--cfg-path', '/tmp/tmpml4agem5', '--error-file', '/tmp/tmpyz7zr_f7']
+[2022-08-21 19:49:45,909] {standard_task_runner.py:80} INFO - Job 9: Subtask dbt_test
+[2022-08-21 19:49:45,986] {task_command.py:371} INFO - Running <TaskInstance: dbt_dag.dbt_test scheduled__2022-08-18T00:00:00+00:00 [running]> on host 5ce0005a4e16
+[2022-08-21 19:49:46,088] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dbt_dag
+AIRFLOW_CTX_TASK_ID=dbt_test
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-18T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-18T00:00:00+00:00
+[2022-08-21 19:49:46,088] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-08-21 19:49:46,089] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'cd ${DBT_HOME} && dbt test']
+[2022-08-21 19:49:46,092] {subprocess.py:85} INFO - Output:
+[2022-08-21 19:49:49,036] {subprocess.py:92} INFO - [0m19:49:49  Running with dbt=1.2.0
+[2022-08-21 19:49:50,735] {subprocess.py:92} INFO - [0m19:49:50  Found 6 models, 9 tests, 0 snapshots, 0 analyses, 523 macros, 0 operations, 0 seed files, 3 sources, 1 exposure, 0 metrics
+[2022-08-21 19:49:50,739] {subprocess.py:92} INFO - [0m19:49:50
+[2022-08-21 19:49:51,296] {subprocess.py:92} INFO - [0m19:49:51  Concurrency: 5 threads (target='dbt_x_airflow')
+[2022-08-21 19:49:51,297] {subprocess.py:92} INFO - [0m19:49:51
+[2022-08-21 19:49:51,308] {subprocess.py:92} INFO - [0m19:49:51  1 of 9 START test accepted_values_stg_orders_status__completed__shipped__returned__return_pending__placed  [RUN]
+[2022-08-21 19:49:51,310] {subprocess.py:92} INFO - [0m19:49:51  2 of 9 START test not_null_stg_customers_customer_id ........................... [RUN]
+[2022-08-21 19:49:51,311] {subprocess.py:92} INFO - [0m19:49:51  3 of 9 START test not_null_stg_orders_order_id ................................. [RUN]
+[2022-08-21 19:49:51,313] {subprocess.py:92} INFO - [0m19:49:51  4 of 9 START test source_not_null_jaffle_shop_customers_id ..................... [RUN]
+[2022-08-21 19:49:51,314] {subprocess.py:92} INFO - [0m19:49:51  5 of 9 START test source_not_null_jaffle_shop_orders_id ........................ [RUN]
+[2022-08-21 19:49:53,170] {subprocess.py:92} INFO - [0m19:49:53  4 of 9 PASS source_not_null_jaffle_shop_customers_id ........................... [[32mPASS[0m in 1.86s]
+[2022-08-21 19:49:53,174] {subprocess.py:92} INFO - [0m19:49:53  6 of 9 START test source_unique_jaffle_shop_customers_id ....................... [RUN]
+[2022-08-21 19:49:53,251] {subprocess.py:92} INFO - [0m19:49:53  3 of 9 PASS not_null_stg_orders_order_id ....................................... [[32mPASS[0m in 1.94s]
+[2022-08-21 19:49:53,259] {subprocess.py:92} INFO - [0m19:49:53  2 of 9 PASS not_null_stg_customers_customer_id ................................. [[32mPASS[0m in 1.95s]
+[2022-08-21 19:49:53,261] {subprocess.py:92} INFO - [0m19:49:53  7 of 9 START test source_unique_jaffle_shop_orders_id .......................... [RUN]
+[2022-08-21 19:49:53,266] {subprocess.py:92} INFO - [0m19:49:53  8 of 9 START test unique_stg_customers_customer_id ............................. [RUN]
+[2022-08-21 19:49:53,377] {subprocess.py:92} INFO - [0m19:49:53  5 of 9 PASS source_not_null_jaffle_shop_orders_id .............................. [[32mPASS[0m in 2.06s]
+[2022-08-21 19:49:53,384] {subprocess.py:92} INFO - [0m19:49:53  1 of 9 PASS accepted_values_stg_orders_status__completed__shipped__returned__return_pending__placed  [[32mPASS[0m in 2.07s]
+[2022-08-21 19:49:53,389] {subprocess.py:92} INFO - [0m19:49:53  9 of 9 START test unique_stg_orders_order_id ................................... [RUN]
+[2022-08-21 19:49:55,023] {subprocess.py:92} INFO - [0m19:49:55  6 of 9 PASS source_unique_jaffle_shop_customers_id ............................. [[32mPASS[0m in 1.85s]
+[2022-08-21 19:49:55,155] {subprocess.py:92} INFO - [0m19:49:55  7 of 9 PASS source_unique_jaffle_shop_orders_id ................................ [[32mPASS[0m in 1.89s]
+[2022-08-21 19:49:55,425] {subprocess.py:92} INFO - [0m19:49:55  8 of 9 PASS unique_stg_customers_customer_id ................................... [[32mPASS[0m in 2.16s]
+[2022-08-21 19:49:55,597] {subprocess.py:92} INFO - [0m19:49:55  9 of 9 PASS unique_stg_orders_order_id ......................................... [[32mPASS[0m in 2.21s]
+[2022-08-21 19:49:55,605] {subprocess.py:92} INFO - [0m19:49:55
+[2022-08-21 19:49:55,606] {subprocess.py:92} INFO - [0m19:49:55  Finished running 9 tests in 0 hours 0 minutes and 4.86 seconds (4.86s).
+[2022-08-21 19:49:55,638] {subprocess.py:92} INFO - [0m19:49:55
+[2022-08-21 19:49:55,639] {subprocess.py:92} INFO - [0m19:49:55  [32mCompleted successfully[0m
+[2022-08-21 19:49:55,641] {subprocess.py:92} INFO - [0m19:49:55
+[2022-08-21 19:49:55,642] {subprocess.py:92} INFO - [0m19:49:55  Done. PASS=9 WARN=0 ERROR=0 SKIP=0 TOTAL=9
+[2022-08-21 19:49:56,333] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-08-21 19:49:56,383] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=dbt_dag, task_id=dbt_test, execution_date=20220818T000000, start_date=20220821T194945, end_date=20220821T194956
+[2022-08-21 19:49:56,439] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-21 19:49:56,503] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

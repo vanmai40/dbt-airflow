@@ -1,0 +1,52 @@
+[2022-08-21 19:48:47,624] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dbt_dag.dbt_run scheduled__2022-08-17T00:00:00+00:00 [queued]>
+[2022-08-21 19:48:47,637] {taskinstance.py:1179} INFO - Dependencies all met for <TaskInstance: dbt_dag.dbt_run scheduled__2022-08-17T00:00:00+00:00 [queued]>
+[2022-08-21 19:48:47,637] {taskinstance.py:1376} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:48:47,638] {taskinstance.py:1377} INFO - Starting attempt 1 of 1
+[2022-08-21 19:48:47,638] {taskinstance.py:1378} INFO - 
+--------------------------------------------------------------------------------
+[2022-08-21 19:48:47,668] {taskinstance.py:1397} INFO - Executing <Task(BashOperator): dbt_run> on 2022-08-17 00:00:00+00:00
+[2022-08-21 19:48:47,670] {standard_task_runner.py:52} INFO - Started process 32 to run task
+[2022-08-21 19:48:47,672] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'dbt_dag', 'dbt_run', 'scheduled__2022-08-17T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/dbt_project.py', '--cfg-path', '/tmp/tmpand1dfd6', '--error-file', '/tmp/tmpf_6g39x7']
+[2022-08-21 19:48:47,673] {standard_task_runner.py:80} INFO - Job 4: Subtask dbt_run
+[2022-08-21 19:48:47,756] {task_command.py:371} INFO - Running <TaskInstance: dbt_dag.dbt_run scheduled__2022-08-17T00:00:00+00:00 [running]> on host 5ce0005a4e16
+[2022-08-21 19:48:47,863] {taskinstance.py:1589} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=dbt_dag
+AIRFLOW_CTX_TASK_ID=dbt_run
+AIRFLOW_CTX_EXECUTION_DATE=2022-08-17T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-08-17T00:00:00+00:00
+[2022-08-21 19:48:47,864] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-08-21 19:48:47,865] {subprocess.py:74} INFO - Running command: ['bash', '-c', 'cd ${DBT_HOME} && dbt run']
+[2022-08-21 19:48:47,868] {subprocess.py:85} INFO - Output:
+[2022-08-21 19:48:50,833] {subprocess.py:92} INFO - [0m19:48:50  Running with dbt=1.2.0
+[2022-08-21 19:48:50,909] {subprocess.py:92} INFO - [0m19:48:50  Unable to do partial parsing because env vars used in profiles.yml have changed
+[2022-08-21 19:48:50,910] {subprocess.py:92} INFO - [0m19:48:50  Unable to do partial parsing because a project config has changed
+[2022-08-21 19:48:54,072] {subprocess.py:92} INFO - [0m19:48:54  Found 6 models, 9 tests, 0 snapshots, 0 analyses, 523 macros, 0 operations, 0 seed files, 3 sources, 1 exposure, 0 metrics
+[2022-08-21 19:48:54,076] {subprocess.py:92} INFO - [0m19:48:54
+[2022-08-21 19:48:55,620] {subprocess.py:92} INFO - [0m19:48:55  Concurrency: 5 threads (target='dbt_x_airflow')
+[2022-08-21 19:48:55,621] {subprocess.py:92} INFO - [0m19:48:55
+[2022-08-21 19:48:55,639] {subprocess.py:92} INFO - [0m19:48:55  1 of 6 START table model dbt_x_airflow.agg_transactions ........................ [RUN]
+[2022-08-21 19:48:55,640] {subprocess.py:92} INFO - [0m19:48:55  2 of 6 START view model dbt_x_airflow.stg_customers ............................ [RUN]
+[2022-08-21 19:48:55,642] {subprocess.py:92} INFO - [0m19:48:55  3 of 6 START view model dbt_x_airflow.stg_orders ............................... [RUN]
+[2022-08-21 19:48:55,644] {subprocess.py:92} INFO - [0m19:48:55  4 of 6 START view model dbt_x_airflow.stg_payments ............................. [RUN]
+[2022-08-21 19:48:57,125] {subprocess.py:92} INFO - [0m19:48:57  4 of 6 OK created view model dbt_x_airflow.stg_payments ........................ [[32mOK[0m in 1.47s]
+[2022-08-21 19:48:57,128] {subprocess.py:92} INFO - [0m19:48:57  2 of 6 OK created view model dbt_x_airflow.stg_customers ....................... [[32mOK[0m in 1.48s]
+[2022-08-21 19:48:57,132] {subprocess.py:92} INFO - [0m19:48:57  5 of 6 START table model dbt_x_airflow.pivoted_orders .......................... [RUN]
+[2022-08-21 19:48:57,148] {subprocess.py:92} INFO - [0m19:48:57  3 of 6 OK created view model dbt_x_airflow.stg_orders .......................... [[32mOK[0m in 1.50s]
+[2022-08-21 19:48:57,152] {subprocess.py:92} INFO - [0m19:48:57  6 of 6 START table model dbt_x_airflow.dim_customers ........................... [RUN]
+[2022-08-21 19:48:58,966] {subprocess.py:92} INFO - [0m19:48:58  1 of 6 OK created table model dbt_x_airflow.agg_transactions ................... [[32mCREATE TABLE (96.0 rows, 2.4 KB processed)[0m in 3.32s]
+[2022-08-21 19:49:00,689] {subprocess.py:92} INFO - [0m19:49:00  5 of 6 OK created table model dbt_x_airflow.pivoted_orders ..................... [[32mCREATE TABLE (99.0 rows, 4.4 KB processed)[0m in 3.55s]
+[2022-08-21 19:49:00,907] {subprocess.py:92} INFO - [0m19:49:00  6 of 6 OK created table model dbt_x_airflow.dim_customers ...................... [[32mCREATE TABLE (100.0 rows, 4.3 KB processed)[0m in 3.75s]
+[2022-08-21 19:49:00,913] {subprocess.py:92} INFO - [0m19:49:00
+[2022-08-21 19:49:00,914] {subprocess.py:92} INFO - [0m19:49:00  Finished running 3 view models, 3 table models in 0 hours 0 minutes and 6.84 seconds (6.84s).
+[2022-08-21 19:49:00,946] {subprocess.py:92} INFO - [0m19:49:00
+[2022-08-21 19:49:00,947] {subprocess.py:92} INFO - [0m19:49:00  [32mCompleted successfully[0m
+[2022-08-21 19:49:00,948] {subprocess.py:92} INFO - [0m19:49:00
+[2022-08-21 19:49:00,949] {subprocess.py:92} INFO - [0m19:49:00  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+[2022-08-21 19:49:01,623] {subprocess.py:96} INFO - Command exited with return code 0
+[2022-08-21 19:49:01,668] {taskinstance.py:1415} INFO - Marking task as SUCCESS. dag_id=dbt_dag, task_id=dbt_run, execution_date=20220817T000000, start_date=20220821T194847, end_date=20220821T194901
+[2022-08-21 19:49:01,704] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-08-21 19:49:01,760] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
