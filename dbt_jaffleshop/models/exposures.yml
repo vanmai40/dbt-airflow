@@ -1,0 +1,14 @@
+version: 2
+
+exposures:
+  
+  - name: customer_dashboard
+    type: dashboard
+    depends_on:
+      - ref('agg_transactions')
+      - ref('dim_customers')
+      - ref('stg_payments')
+
+    owner:
+      name: vanmai
+      email: van.mai@company.com
