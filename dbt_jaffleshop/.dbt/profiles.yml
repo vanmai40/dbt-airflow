@@ -8,7 +8,7 @@ bigquery:
       project: airflow-docker-352518
       dataset: dbt_dataset
       threads: 5
-      keyfile: "{{ env_var('DBT_HOME') }}/airflow-docker-352518-1769578cc269.json"
+      keyfile: "{{ env_var('DBT_HOME') }}/keyfile.json"
       timeout_seconds: 300
       priority: interactive
       retries: 1
@@ -19,7 +19,7 @@ bigquery:
       project: airflow-docker-352518
       dataset: dbt_x_airflow
       threads: 5
-      keyfile: "{{ env_var('DBT_HOME') }}/airflow-docker-352518-1769578cc269.json"
+      keyfile: "{{ env_var('DBT_HOME') }}/keyfile.json"
       timeout_seconds: 300
       priority: interactive
       retries: 1
