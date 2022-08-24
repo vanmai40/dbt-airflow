@@ -5,12 +5,10 @@ bigquery:
     dbt_x_airflow:
       type: bigquery
       method: service-account
-      project: ${GBQ_PROJECT}
-      dataset: ${GBQ_DATASET}
+      project: airflow-docker-352518
+      dataset: dbt_x_airflow
       threads: 5
-      keyfile: "{{ env_var('DBT_HOME') }}/keyfile.json"
+      keyfile: "{{ env_var('DBT_HOME') }}/airflow-docker-352518-1769578cc269.json"
       timeout_seconds: 300
       priority: interactive
       retries: 1
-
-    
