@@ -2,7 +2,6 @@ bigquery:
   target: dbt_x_airflow
 
   outputs:
-  
     dbt_x_airflow:
       type: bigquery
       method: service-account
